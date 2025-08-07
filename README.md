@@ -6,7 +6,7 @@ Wallet, this is a [Next.js](https://nextjs.org) project bootstrapped with [`crea
 
  - Framework: Next.js
  - Styling: Tailwind CSS
- - UI Components: shadcn
+ - UI Components: shadcn-ui
  - Deployment: Vercel
 
 ## Local Setup
