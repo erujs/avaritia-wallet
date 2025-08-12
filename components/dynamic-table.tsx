@@ -12,15 +12,8 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
       case "currency":
         return new Intl.NumberFormat("en-US", {
           style: "currency",
-          currency: "USD",
+          currency: "PHP",
         }).format(value)
-
-      case "date":
-        return new Date(value).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        })
 
       case "badge":
         const getBadgeVariant = (value: string) => {

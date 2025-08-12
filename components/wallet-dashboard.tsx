@@ -66,7 +66,7 @@ export default function Component() {
                   <strong className="text-white">date:</strong> Formatted date display
                 </li>
                 <li>
-                  <strong className="text-white">currency:</strong> Formatted as USD currency
+                  <strong className="text-white">currency:</strong> Formatted as PHP currency
                 </li>
                 <li>
                   <strong className="text-white">badge:</strong> Colored badges with automatic styling
