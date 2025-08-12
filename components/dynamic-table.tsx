@@ -7,14 +7,16 @@ interface DynamicTableProps {
 }
 
 export function DynamicTable({ columns, data }: DynamicTableProps) {
-  const formatCellValue = (value: any, type: TableColumn["type"]) => {
+  const formatCellValue = (value: string, type: TableColumn["type"]) => {
     switch (type) {
       case "currency":
         if (!value) return "";
+        const numericValue = Number(value);
+        if (isNaN(numericValue)) return ""
         return new Intl.NumberFormat("en-US", {
           style: "currency",
           currency: "PHP",
-        }).format(value)
+        }).format(numericValue)
 
       case "date":
         if (!value) return "";
@@ -42,16 +44,13 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
           </Badge>
         )
 
-      case "number":
-        return typeof value === "number" ? value.toLocaleString() : value
-
       default:
         return value
     }
   }
 
   const calculateColumnTotal = (columnKey: string, columnType: TableColumn["type"]) => {
-    if (columnType !== "currency" && columnType !== "number") return null
+    if (columnType !== "currency") return null
 
     const total = data.reduce((sum, row) => {
       const value = row[columnKey]
