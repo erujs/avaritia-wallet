@@ -57,7 +57,7 @@ export const tableConfigs: TableConfig[] = [
         bank: "BPI Jhassel",
         description: "",
         type: "Savings",
-        balance: "700000",
+        balance: "1000000",
       },
       {
         bank: "RCBC",
@@ -94,12 +94,6 @@ export const tableConfigs: TableConfig[] = [
         description: "digital savings account | 4 percent interest",
         type: "Savings",
         balance: "10000",
-      },
-      {
-        bank: "GoTyme Condo",
-        description: "digital savings account | 4 percent interest",
-        type: "Savings",
-        balance: "20000",
       },
       {
         bank: "Maya",
@@ -223,7 +217,7 @@ export const tableConfigs: TableConfig[] = [
         service: "BPI House Loan",
         remarks: "",
         type: "Loan",
-        target: "2789438.35",
+        target: "2737976.29",
         current: "22328.99",
         startdate: "2024-11-29",
         enddate: "2044-10-29",
@@ -264,7 +258,7 @@ export const tableConfigs: TableConfig[] = [
         party: "Jerus",
         remarks: "Loan to Self",
         type: "Loan",
-        balance: "500000",
+        balance: "",
         duedate: "",
       },
       {

@@ -29,13 +29,13 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
       case "badge":
         const getBadgeVariant = (value: string) => {
           const lowerValue = value.toLowerCase()
-          if (lowerValue === "savings") {
-            return "default"
+          if (lowerValue === "insurance" || lowerValue === "trust" || lowerValue === "receivable") {
+            return "secondary"
           }
-          if (lowerValue === "loan") {
+          if (lowerValue === "loan" || lowerValue === "rent" || lowerValue === "subscription") {
             return "destructive"
           }
-          return "secondary"
+          return "default"
         }
 
         return (
@@ -53,17 +53,19 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
     if (columnType !== "currency") return null
 
     const total = data.reduce((sum, row) => {
-      const value = row[columnKey]
-      return sum + (typeof value === "number" ? value : 0)
+      const rawValue = row[columnKey]
+      const value = typeof rawValue === "string" ? parseFloat(rawValue) : rawValue
+      return sum + (isNaN(value) ? 0 : value)
     }, 0)
 
-    return columnType === "currency"
-      ? new Intl.NumberFormat("en-US", { style: "currency", currency: "PHP" }).format(total)
-      : total.toLocaleString()
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "PHP",
+    }).format(total)
   }
 
   return (
-    <div className="overflow-x-auto bg-neutral-900 rounded-lg border border-neutral-800">
+    <div className="overflow-x-auto bg-neutral-900 border border-neutral-800">
       <table className="w-full border-collapse">
         <thead>
           <tr className="border-b border-neutral-800 bg-neutral-900">

@@ -17,9 +17,9 @@ export default function Component() {
             <AccordionItem
               key={config.id}
               value={config.id}
-              className="bg-neutral-800 rounded-lg overflow-hidden border-b-0"
+              className="bg-neutral-800 overflow-hidden border-b-0"
             >
-              <AccordionTrigger className="px-6 py-4 hover:bg-neutral-700 transition-colors [&[data-state=open]]:bg-neutral-700">
+              <AccordionTrigger className="px-6 py-4 hover:bg-neutral-700 transition-colors [&[data-state=open]]:bg-neutral-700 rounded-none">
                 <div className="flex flex-col items-start text-left">
                   <h3 className="text-lg font-semibold text-white">{config.title}</h3>
                   <p className="text-sm text-neutral-400 mt-1">{config.description}</p>
