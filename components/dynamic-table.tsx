@@ -1,9 +1,9 @@
-import type { TableColumn, TableData } from "@/constants/table-config"
+import type { TableColumn, TableRow } from "@/constants/table-data"
 import { Badge } from "@/components/ui/badge"
 
 interface DynamicTableProps {
   columns: TableColumn[]
-  data: TableData[]
+  data: TableRow[]
 }
 
 export function DynamicTable({ columns, data }: DynamicTableProps) {
@@ -39,8 +39,8 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
         }
 
         return (
-          <Badge variant={getBadgeVariant(value)} className="text-xs">
-            {value}
+          <Badge variant={getBadgeVariant(value)} className="text-xs font-bold">
+            {value.toUpperCase()}
           </Badge>
         )
 
@@ -65,13 +65,13 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
   }
 
   return (
-    <div className="overflow-x-auto bg-neutral-900 border border-neutral-800">
+    <div className="overflow-x-auto bg-neutral-900">
       <table className="w-full border-collapse">
         <thead>
           <tr className="border-b border-neutral-800 bg-neutral-900">
             {columns.map((column) => (
               <th key={column.key} className={`text-left py-4 px-4 font-semibold text-white ${column.width || ""}`}>
-                {column.header}
+                {column.label.toUpperCase()}
               </th>
             ))}
           </tr>

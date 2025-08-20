@@ -1,32 +1,32 @@
 export interface TableColumn {
   key: string
-  header: string
+  label: string
   type: "text" | "date" | "currency" | "badge"
   width?: string
 }
 
-export interface TableData {
-  [key: string]: any
+export interface TableRow {
+  [key: string]: string
 }
 
-export interface TableConfig {
+export interface TableSection {
   id: string
   title: string
   description: string
   columns: TableColumn[]
-  data: TableData[]
+  data: TableRow[]
 }
 
-export const tableConfigs: TableConfig[] = [
+export const tableSections: TableSection[] = [
   {
     id: "wallet",
     title: "Wallet",
     description: "Savings and available funds",
     columns: [
-      { key: "bank", header: "Bank", type: "text", width: "flex-1" },
-      { key: "description", header: "Description", type: "text", width: "flex-1" },
-      { key: "type", header: "Type", type: "badge", width: "w-20" },
-      { key: "balance", header: "Balance", type: "currency", width: "w-24" },
+      { key: "bank", label: "Bank", type: "text", width: "flex-1" },
+      { key: "description", label: "Description", type: "text", width: "flex-1" },
+      { key: "type", label: "Type", type: "badge", width: "w-20" },
+      { key: "balance", label: "Balance", type: "currency", width: "w-24" },
     ],
     data: [
       {
@@ -132,13 +132,13 @@ export const tableConfigs: TableConfig[] = [
     title: "Bills",
     description: "Recurring bills and payments",
     columns: [
-      { key: "service", header: "Service", type: "text", width: "flex-1" },
-      { key: "remarks", header: "Remarks", type: "text", width: "flex-1" },
-      { key: "type", header: "Type", type: "badge", width: "w-20" },
-      { key: "target", header: "Target", type: "currency", width: "w-24" },
-      { key: "current", header: "Current", type: "currency", width: "w-24" },
-      { key: "startdate", header: "Start Date", type: "date", width: "w-32" },
-      { key: "enddate", header: "End Date", type: "date", width: "w-32" },
+      { key: "service", label: "Service", type: "text", width: "flex-1" },
+      { key: "remarks", label: "Remarks", type: "text", width: "flex-1" },
+      { key: "type", label: "Type", type: "badge", width: "w-20" },
+      { key: "target", label: "Target", type: "currency", width: "w-24" },
+      { key: "current", label: "Current", type: "currency", width: "w-24" },
+      { key: "startdate", label: "Start Date", type: "date", width: "w-32" },
+      { key: "enddate", label: "End Date", type: "date", width: "w-32" },
     ],
     data: [
       {
@@ -247,11 +247,11 @@ export const tableConfigs: TableConfig[] = [
     title: "Financial Ledger",
     description: "Receivables, payables, and funds held in trust",
     columns: [
-      { key: "party", header: "Party", type: "text", width: "flex-1" },
-      { key: "remarks", header: "Remarks", type: "text", width: "flex-1" },
-      { key: "type", header: "Type", type: "badge", width: "w-20" },
-      { key: "balance", header: "Balance", type: "currency", width: "w-24" },
-      { key: "duedate", header: "Due Date", type: "date", width: "w-32" },
+      { key: "party", label: "Party", type: "text", width: "flex-1" },
+      { key: "remarks", label: "Remarks", type: "text", width: "flex-1" },
+      { key: "type", label: "Type", type: "badge", width: "w-20" },
+      { key: "balance", label: "Balance", type: "currency", width: "w-24" },
+      { key: "duedate", label: "Due Date", type: "date", width: "w-32" },
     ],
     data: [
       {
@@ -277,7 +277,7 @@ export const tableConfigs: TableConfig[] = [
       },
       {
         party: "Cholo",
-        remarks: "Loan to Cholo — ₱18,500 repaint + ₱10,000 business investment",
+        remarks: "Loan to Cholo — ₱18,500 repaint + ₱6000 tint + ₱4,000 business investment",
         type: "Receivable",
         balance: "28500",
         duedate: "",
