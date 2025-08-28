@@ -1,4 +1,4 @@
-import type { TableColumn, TableRow } from "@/constants/table-data"
+import type { TableColumn, TableRow } from "@/lib/table-types"
 import { Badge } from "@/components/ui/badge"
 
 interface DynamicTableProps {
