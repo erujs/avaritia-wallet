@@ -1,4 +1,4 @@
-import type { TableColumn, TableRow } from "@/lib/table-types"
+import type { TableColumn, TableRow } from "@/lib/data-types"
 import { Badge } from "@/components/ui/badge"
 
 interface DynamicTableProps {
@@ -70,7 +70,7 @@ export function DynamicTable({ columns, data }: DynamicTableProps) {
         <thead>
           <tr className="border-b border-neutral-800 bg-neutral-900">
             {columns.map((column) => (
-              <th key={column.key} className={`text-left py-4 px-4 font-semibold text-white ${column.width || ""}`}>
+              <th key={column.key} className={`text-left py-4 px-4 font-semibold text-secondary ${column.width || ""}`}>
                 {column.label.toUpperCase()}
               </th>
             ))}

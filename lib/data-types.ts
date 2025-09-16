@@ -9,7 +9,7 @@ export interface TableRow {
   [key: string]: string
 }
 
-export interface TableSection {
+export interface Wallet {
   id: string
   title: string
   description: string

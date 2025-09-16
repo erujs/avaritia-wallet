@@ -3,9 +3,8 @@
 import Image from "next/image"
 
 export default function ErrorPage({ error, reset }: { error: Error; reset: () => void }) {
-  console.log(error.name, error.message)
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-black text-white">
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-foreground text-secondary">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="flex items-center gap-4">
           <div className="text-6xl font-bold text-red-500">{error.name}</div>
@@ -21,7 +20,7 @@ export default function ErrorPage({ error, reset }: { error: Error; reset: () =>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <button
             onClick={() => reset()}
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-red-600 text-white gap-2 hover:bg-red-700 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer"
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-red-600 text-secondary gap-2 hover:bg-red-700 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto cursor-pointer"
           >
             Try Again
           </button>
