@@ -16,3 +16,7 @@ export interface Wallet {
   columns: TableColumn[]
   data: TableRow[]
 }
+
+export interface AccordionSectionProps {
+  endpoint: string
+}
